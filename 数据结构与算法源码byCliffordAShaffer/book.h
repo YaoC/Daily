@@ -9,17 +9,19 @@
 // First, include all the standard headers that we need
 #include <iostream>
 #include <cstdlib>
+#include<string>			//YaoC
 #include <time.h>  // Used by timing functions
 
 // Now all the standard names that we use
-using std::cout;
+/*using std::cout;
 using std::endl;
 using std::string;
-using std::ostream;
+using std::ostream;*/		//YaoC
+using namespace std;		//YaoC
 
 const int defaultSize = 10; // Default size
 
-// Return true iff "x" is even
+// Return true iff "x" is even 
 inline bool EVEN(int x) { return (x % 2) == 0; }
 
 // Return true iff "x" is odd
@@ -44,7 +46,7 @@ inline void swap(E A[], int i, int j) {
 // Random number generator functions
 
 inline void Randomize() // Seed the generator
-  { srand(1); }
+  { srand(1); }			
 
 // Return a random value in range 0 to n-1
 inline int Random(int n)

@@ -3,7 +3,7 @@
 // Third Edition (C++)" by Clifford A. Shaffer.
 // Source code Copyright (C) 2007-2011 by Clifford A. Shaffer.
 
-// The Dictionary abstract class.
+// The Dictionary abstract class. 
 template <typename Key, typename E>
 class  Dictionary {
 private:

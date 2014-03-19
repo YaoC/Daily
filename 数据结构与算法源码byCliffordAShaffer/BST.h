@@ -15,7 +15,7 @@
 template <typename Key, typename E>
 class BST : public Dictionary<Key,E> {
 private:
-  BSTNode<Key,E>* root;   // Root of the BST
+  BSTNode<Key,E>* root;   // Root of the BST			has BSTNode 
   int nodecount;         // Number of nodes in the BST
 
   // Private "helper" functions
@@ -87,7 +87,7 @@ template <typename Key, typename E>
 void BST<Key, E>::
 clearhelp(BSTNode<Key, E>* root) {
   if (root == NULL) return;
-  clearhelp(root->left());
+  clearhelp(root->left());	//recursion 
   clearhelp(root->right());
   delete root;
 }
@@ -96,11 +96,11 @@ clearhelp(BSTNode<Key, E>* root) {
 template <typename Key, typename E>
 BSTNode<Key, E>* BST<Key, E>::inserthelp(
     BSTNode<Key, E>* root, const Key& k, const E& it) {
-  if (root == NULL)  // Empty tree: create node
+  if (root == NULL)  // Empty tree: create node  	YaoC(a little hard to understand) 
     return new BSTNode<Key, E>(k, it, NULL, NULL);
   if (k < root->key())
-    root->setLeft(inserthelp(root->left(), k, it));
-  else root->setRight(inserthelp(root->right(), k, it));
+    root->setLeft(inserthelp(root->left(), k, it));		//YaoC insert the element as a child of the root's left child (recursion )
+  else root->setRight(inserthelp(root->right(), k, it));	//YaoC insert the element as a child of the root's right child (recursion )
   return root;       // Return tree with node inserted
 }
 
@@ -116,7 +116,7 @@ template <typename Key, typename E>
 BSTNode<Key, E>* BST<Key, E>::
 deletemin(BSTNode<Key, E>* rt) {
   if (rt->left() == NULL) // Found min
-    return rt->right();
+    return rt->right();		//all of the RIGHT are bigger than rt
   else {                      // Continue left
     rt->setLeft(deletemin(rt->left()));
     return rt;

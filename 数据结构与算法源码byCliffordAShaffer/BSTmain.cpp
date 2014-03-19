@@ -108,5 +108,6 @@ int main()
     cout << temp << " ";
   }
   cout << "\n";
-  return 0;
+  /*return 0;*/				//YaoC
+  system("pause");			//YaoC
 }
