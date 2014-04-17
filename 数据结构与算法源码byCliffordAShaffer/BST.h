@@ -119,7 +119,7 @@ deletemin(BSTNode<Key, E>* rt) {
     return rt->right();		//all of the RIGHT are bigger than rt
   else {                      // Continue left
     rt->setLeft(deletemin(rt->left()));
-    return rt;
+    return rt;		//YaoC£¨hard to understand£©
   }
 }
 
@@ -144,7 +144,7 @@ removehelp(BSTNode<Key, E>* rt, const Key& k) {
       delete temp;
     }
     else {                    // Both children are non-empty
-      BSTNode<Key, E>* temp = getmin(rt->right());
+      BSTNode<Key, E>* temp = getmin(rt->right());		//YaoC£¨hard to understand£©
       rt->setElement(temp->element());
       rt->setKey(temp->key());
       rt->setRight(deletemin(rt->right()));
